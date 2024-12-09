@@ -152,8 +152,6 @@ If you have a use case in which you have dynamic filters, i.e. filters unknown i
 
 
 
-jakarta-data offers two interfaces for 
-
 ### Do I need a Criteria-based repository?
 
 A criteria-based repository obviously is the only choice when your filtering and ordering parameters cannot be known in advance.
@@ -169,8 +167,6 @@ The following gives an overview of the process of calling a service that in turn
 ### Class Diagram "Blueprint" Classes
 
 These are the classes that are candidates for the Blueprint:
-
-![Blueprint Candidates](images/main-package.drawio.png)
 
 
 ### Future Direction
