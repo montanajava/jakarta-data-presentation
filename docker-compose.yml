@@ -1,0 +1,29 @@
+services:
+  database:
+    container_name: "library-db"
+    image: "postgres:16"
+    restart: always
+    ports:
+      - "7433:5432" # 7432 is exposed to outside clients
+    environment:
+      POSTGRES_USER: "quarkus"
+      POSTGRES_PASSWORD: "quarkus"
+      POSTGRES_DB: "library"
+    networks:
+      - backendnet
+# following left for reference
+#    env_file:
+#      - database.env # configure postgres
+    volumes:
+      - language-db-data:/var/lib/postgresql/data
+volumes:
+  language-db-data:
+    driver: local
+    external: false
+    labels:
+        description: mounted volume for language db
+networks:
+  backendnet:
+    labels:
+      description: network for language service
+
